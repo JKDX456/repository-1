@@ -1,9 +1,22 @@
-<h1>{{ question.question_text }}</h1>
+<head>
+    <style>
+            body {
+                font-family: 'Comic Sans MS';
+                background-color: orange;
+                color: green   
+            }
+    
+    </style>
 
-<ul>
-{% for choice in question.choice_set.all %}
-	<li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
 
-<a href='/'>Home</a>
+    <ul>
+        {% for choice in question.choice_set.all %}
+	   <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href='/'>Home</a>
+</body>
